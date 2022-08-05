@@ -6,6 +6,8 @@ const Styles = styled.div`
   background: #fff;
   border-radius: 5px;
   color: #4a4a4a;
+  font-size: 12px;
+
   .content,
   .form-check,
   input,
@@ -20,8 +22,11 @@ const Styles = styled.div`
   .form-check-input {
     border-radius: 2px;
   }
+
   .content {
     transition: all 0.2s ease-in-out;
+    font-weight: 400;
+    font-size: 13px;
     :hover {
       background: #2196f31f;
     }
@@ -30,9 +35,9 @@ const Styles = styled.div`
 
 export default function Filters({ name, checkBoxList }) {
   return (
-    <Styles>
-      <Form className="shadow-sm">
-        <p className="text-uppercase mx-3 my-0 fs-6 pt-3 pb-2">{name}</p>
+    <Styles className="mb-3 shadow-sm">
+      <Form>
+        <p className="text-uppercase mx-3 my-0 pt-4 pb-2">{name}</p>
         {checkBoxList.map((type, i) => {
           return (
             <Container key={i} className="content p-0 py-2">

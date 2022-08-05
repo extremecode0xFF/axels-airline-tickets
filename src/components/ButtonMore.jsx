@@ -22,7 +22,7 @@ export default function ButtonMore() {
   return (
     <Styles>
       <Button className="w-100" size="lg">
-        Показать еще пять билетов!
+        Показать еще 5 билетов!
       </Button>
     </Styles>
   );

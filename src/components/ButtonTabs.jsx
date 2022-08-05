@@ -6,7 +6,9 @@ const Style = styled(Container)`
   .btn {
     transition: all 0.2s ease-out;
     border-color: #dad9d9;
-    line-height: 45px;
+    background-color: white;
+    font-size: 12px;
+    padding: 20px 0;
     :hover,
     :active,
     :focus {
@@ -23,9 +25,9 @@ const Style = styled(Container)`
 
 export default function ButtonTabs() {
   return (
-    <Style>
-      <ButtonToolbar aria-label="Toolbar with button groups">
-        <ButtonGroup className="w-100" size="lg">
+    <Style className="mb-3">
+      <ButtonToolbar>
+        <ButtonGroup className="w-100" size="dm">
           <Button className="text-uppercase" variant="light">
             самый дешевый
           </Button>
