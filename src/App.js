@@ -1,19 +1,12 @@
 import { Container, Row, Col } from 'react-bootstrap';
-import Filters from './components/Filters';
-import Header from './components/Header';
-import ButtonTabs from './components/ButtonTabs';
-import ButtonMore from './components/ButtonMore';
-import TicketList from './components/TicketList';
-import { createGlobalStyle } from 'styled-components';
-
-const GlobalStyle = createGlobalStyle`
-  body {
-    background: #e5e5e5;
-    font-family: 'Open Sans', sans-serif;
-    letter-spacing: 0.5px;
-    font-weight: 600;
-  }
-`;
+import {
+  Filters,
+  Header,
+  ButtonTabs,
+  ButtonMore,
+  TicketList,
+} from './components';
+import { GlobalStyles } from './styled/GlobalStyles';
 
 function App() {
   const list = [
@@ -25,6 +18,7 @@ function App() {
   ];
   return (
     <>
+      <GlobalStyles />
       <Container>
         <Header />
         <Row className="mx-auto" as="section">
@@ -38,7 +32,6 @@ function App() {
           </Col>
         </Row>
       </Container>
-      <GlobalStyle />
     </>
   );
 }

@@ -1,31 +1,10 @@
 import React from 'react';
-import { Button, ButtonGroup, ButtonToolbar, Container } from 'react-bootstrap';
-import styled from 'styled-components';
-
-const Style = styled(Container)`
-  .btn {
-    transition: all 0.2s ease-out;
-    border-color: #dad9d9;
-    background-color: white;
-    font-size: 12px;
-    padding: 20px 0;
-    :hover,
-    :active,
-    :focus {
-      background-color: #2196f3;
-      color: white;
-      border: 1px solid black;
-    }
-    :focus {
-      outline: none;
-      box-shadow: none;
-    }
-  }
-`;
+import { Button, ButtonGroup, ButtonToolbar } from 'react-bootstrap';
+import { ContainerButtonTabs } from '../styled/ButtonTabs';
 
 export default function ButtonTabs() {
   return (
-    <Style className="mb-3">
+    <ContainerButtonTabs className="mb-3">
       <ButtonToolbar>
         <ButtonGroup className="w-100" size="dm">
           <Button className="text-uppercase" variant="light">
@@ -39,6 +18,6 @@ export default function ButtonTabs() {
           </Button>
         </ButtonGroup>
       </ButtonToolbar>
-    </Style>
+    </ContainerButtonTabs>
   );
 }

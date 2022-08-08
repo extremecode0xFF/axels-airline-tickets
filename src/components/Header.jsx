@@ -1,18 +1,11 @@
 import React from 'react';
-import logo from '../assets/images/Logo.svg';
-import { Image } from 'react-bootstrap';
-import styled from 'styled-components';
-
-const Styles = styled.header`
-  display: flex;
-  justify-content: center;
-  padding: 50px 0;
-`;
+import logo from '../assets/images/logo.svg';
+import { Image, Container } from 'react-bootstrap';
 
 export default function Header() {
   return (
-    <Styles>
+    <Container className="d-flex justify-content-center py-5">
       <Image src={logo} alt="logo" />
-    </Styles>
+    </Container>
   );
 }
