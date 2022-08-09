@@ -8,7 +8,8 @@ function parseToHourMinutes(date) {
   }`;
 }
 
-const addMinutesToDate = (date, minutes) => new Date(date.getTime() + minutes * 60000);
+const addMinutesToDate = (date, minutes) =>
+  new Date(date.getTime() + minutes * 60000);
 
 function timeConvert(min) {
   const num = min;
@@ -20,8 +21,4 @@ function timeConvert(min) {
   return `${rhours}ч ${rminutes}м`;
 }
 
-export {
-  parseToHourMinutes,
-  addMinutesToDate,
-  timeConvert
-};
+export { parseToHourMinutes, addMinutesToDate, timeConvert };

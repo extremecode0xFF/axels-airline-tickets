@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+
 import { Container } from 'react-bootstrap';
 import { createFakeTickets } from '../assets/helpers/fakeTickets';
+
 import Ticket from './Ticket';
 
 export default function TicketList() {

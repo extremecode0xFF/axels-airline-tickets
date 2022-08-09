@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { Stack } from 'react-bootstrap';
 
 const ContainerTicket = styled(Stack)`

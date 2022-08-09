@@ -20,6 +20,7 @@ const GlobalStyles = createGlobalStyle`
     --ticket-price-size: 24px;
     --ticket-title-color: #a0b0b9;
 
+    --filter-color: #4a4a4a;
     --filter-color-hover: #2196f31f;
 
     --text-size: 12px;
