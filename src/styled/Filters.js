@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const ContainerFilters = styled.div`
   background: var(--background-color);
   border-radius: 5px;
-  color: #4a4a4a;
+  color: var(--filter-color);
 
   .content,
   .form-check,
