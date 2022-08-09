@@ -1,4 +1,5 @@
 import { Container, Row, Col } from 'react-bootstrap';
+import { BrowserRouter } from 'react-router-dom';
 import {
   Filters,
   Header,
@@ -18,20 +19,22 @@ function App() {
   ];
   return (
     <>
-      <GlobalStyles />
-      <Container>
-        <Header />
-        <Row className="mx-auto" as="section">
-          <Col md={3}>
-            <Filters name="Количество пересадок" checkBoxList={list} />
-          </Col>
-          <Col>
-            <ButtonTabs />
-            <TicketList />
-            <ButtonMore />
-          </Col>
-        </Row>
-      </Container>
+      <BrowserRouter>
+        <GlobalStyles />
+        <Container>
+          <Header />
+          <Row className="mx-auto" as="section">
+            <Col md={3}>
+              <Filters name="Количество пересадок" checkBoxList={list} />
+            </Col>
+            <Col>
+              <ButtonTabs />
+              <TicketList />
+              <ButtonMore />
+            </Col>
+          </Row>
+        </Container>
+      </BrowserRouter>
     </>
   );
 }
