@@ -1,4 +1,4 @@
-function getPostfix(n) {
+const getPostfix = (n) => {
   const base = 'пересад';
   switch (true) {
     case n >= 5:
@@ -8,6 +8,6 @@ function getPostfix(n) {
     default:
       return base + 'ка';
   }
-}
+};
 
 export { getPostfix };
