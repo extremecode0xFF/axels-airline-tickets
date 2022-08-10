@@ -1,4 +1,4 @@
-function createFakeTickets(total) {
+const createFakeTickets = (total) => {
   const data = [];
   for (let i = 0; i < total; i++) {
     data.push({
@@ -23,6 +23,6 @@ function createFakeTickets(total) {
     });
   }
   return data;
-}
+};
 
 export { createFakeTickets };
