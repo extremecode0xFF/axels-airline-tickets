@@ -11,8 +11,18 @@ import {
 import { GlobalStyles } from './styled/GlobalStyles';
 
 import { configFilterCheckbox, configFilterTabs } from './filters/params';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { getTickets } from './store/ducks/tickets';
 
 function App() {
+  const dispatch = useDispatch();
+  const tickets = useSelector((state) => state.tickets);
+
+  useEffect(() => {
+    dispatch(getTickets());
+  }, [dispatch]);
+
   return (
     <>
       <BrowserRouter>
@@ -21,11 +31,14 @@ function App() {
           <Header />
           <Row className="mx-auto" as="section">
             <Col md={3}>
-              <Filters name="Количество пересадок" config={configFilterCheckbox} />
+              <Filters
+                name="Количество пересадок"
+                config={configFilterCheckbox}
+              />
             </Col>
             <Col>
               <ButtonTabs config={configFilterTabs} />
-              <TicketList />
+              <TicketList tickets={tickets} />
               <ButtonMore />
             </Col>
           </Row>
