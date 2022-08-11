@@ -8,7 +8,6 @@ const ticketsSlice = createSlice({
   reducers: {
     getTickets() {},
     setTickets(state, action) {
-      console.log(state, action);
       return { ...state, tickets: [...action.payload] };
     },
   },
