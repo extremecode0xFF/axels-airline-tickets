@@ -1,27 +1,29 @@
+import { filterTicketsByStops } from '../assets/helpers/filterTickets';
+
 const configFilterCheckbox = [
   {
     title: 'Все',
-    action: function () {},
+    action: (tickets) => tickets,
     query: { all: 'active' },
   },
   {
     title: 'Без пересадок',
-    action: function () {},
+    action: filterTicketsByStops(0),
     query: { withoutTransfer: 'active' },
   },
   {
     title: '1 пересадка',
-    action: function () {},
+    action: filterTicketsByStops(1),
     query: { transfer1: 'active' },
   },
   {
     title: '2 пересадки',
-    action: function () {},
+    action: filterTicketsByStops(2),
     query: { transfer2: 'active' },
   },
   {
     title: '3 пересадки',
-    action: function () {},
+    action: filterTicketsByStops(3),
     query: { transfer3: 'active' },
   },
 ];
@@ -29,17 +31,17 @@ const configFilterCheckbox = [
 const configFilterTabs = [
   {
     title: 'Самый дешевый',
-    action: function () {},
+    action: () => {},
     query: { fastest: 'active' },
   },
   {
     title: 'Самый быстрый',
-    action: function () {},
+    action: () => {},
     query: { cheapest: 'active' },
   },
   {
     title: 'Оптимальный',
-    action: function () {},
+    action: () => {},
     query: { optimal: 'active' },
   },
 ];

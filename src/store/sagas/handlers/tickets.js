@@ -1,5 +1,5 @@
-import { call, put } from 'redux-saga/effects';
-import { setTickets } from '../../ducks/tickets';
+import { call, put, takeLatest } from 'redux-saga/effects';
+import { getTickets, setTickets } from '../../ducks/tickets';
 import { requestGetTickets } from '../requests/tickets';
 
 export function* handleGetTickets() {
@@ -9,4 +9,8 @@ export function* handleGetTickets() {
   } catch (error) {
     console.error(error);
   }
+}
+
+export function* watcherGetTickets() {
+  yield takeLatest(getTickets.type, handleGetTickets);
 }
