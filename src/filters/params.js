@@ -4,27 +4,27 @@ const configFilterCheckbox = [
   {
     title: 'Все',
     action: (tickets) => tickets,
-    query: { all: 'active' },
+    query: 'all',
   },
   {
     title: 'Без пересадок',
     action: filterTicketsByStops(0),
-    query: { withoutTransfer: 'active' },
+    query: 'transfer0',
   },
   {
     title: '1 пересадка',
     action: filterTicketsByStops(1),
-    query: { transfer1: 'active' },
+    query: 'transfer1',
   },
   {
     title: '2 пересадки',
     action: filterTicketsByStops(2),
-    query: { transfer2: 'active' },
+    query: 'transfer2',
   },
   {
     title: '3 пересадки',
     action: filterTicketsByStops(3),
-    query: { transfer3: 'active' },
+    query: 'transfer3',
   },
 ];
 
@@ -32,17 +32,17 @@ const configFilterTabs = [
   {
     title: 'Самый дешевый',
     action: () => {},
-    query: { fastest: 'active' },
+    query: 'cheapest',
   },
   {
     title: 'Самый быстрый',
     action: () => {},
-    query: { cheapest: 'active' },
+    query: 'fastest',
   },
   {
     title: 'Оптимальный',
     action: () => {},
-    query: { optimal: 'active' },
+    query: 'optimal',
   },
 ];
 

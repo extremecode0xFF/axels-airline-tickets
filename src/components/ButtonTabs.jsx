@@ -4,42 +4,53 @@ import { Button, ButtonGroup } from 'react-bootstrap';
 import { ContainerButtonTabs } from '../styled/ButtonTabs';
 
 import { useSearchParams } from 'react-router-dom';
+import { useFormik } from 'formik';
 
 const ButtonTabs = ({ config }) => {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const handleClick = (event) => {
-    if (!event.target.value) return;
-    const [key, value] = event.target.value.split(',');
-    if (searchParams.has(key)) return;
+  const initTabsByURL = () =>
+    config.reduce((acc, { query }) => {
+      if (searchParams.has(query)) {
+        acc = query;
+      }
+      return acc;
+    }, '');
 
+  const formik = useFormik({ initialValues: { radio: initTabsByURL() } });
+
+  const handleClick = (event) => {
+    const key = event.target.value;
+    if (searchParams.has(key)) return;
     config.forEach((val) => {
-      const [param] = Object.keys(val.query);
+      const param = val.query;
       if (searchParams.has(param)) {
         searchParams.delete(param);
       }
     });
-
-    searchParams.append(key, value);
-
-    setSearchParams({
-      ...Object.fromEntries([...searchParams]),
-    });
+    searchParams.append(key, '');
+    setSearchParams(searchParams);
   };
 
   return (
     <ContainerButtonTabs className="mb-3">
-      <ButtonGroup className="w-100" size="dm" onClick={handleClick}>
-        {config.map((filter, index) => (
+      {/*<pre>{JSON.stringify(formik.values, null, 2)}</pre>*/}
+      <ButtonGroup className="w-100" size="dm">
+        {config.map(({ title, query }, index) => (
           <Button
             className="text-uppercase"
             variant="light"
             key={index}
-            id={filter.title}
-            value={Object.entries(filter.query).join()}
-            disabled={searchParams.has(Object.keys(filter.query))}
+            id={query}
+            name="radio"
+            value={query}
+            onClick={(e) => {
+              formik.handleChange(e);
+              handleClick(e);
+            }}
+            disabled={query === formik.values.radio}
           >
-            {filter.title}
+            {title}
           </Button>
         ))}
       </ButtonGroup>
