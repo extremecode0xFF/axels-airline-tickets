@@ -10,11 +10,12 @@ import {
 } from './components';
 import { GlobalStyles } from './styled/GlobalStyles';
 
-import { configFilterCheckbox, configFilterTabs } from './filters/params';
+import { configFilterCheckbox, configFilterTabs } from './configs/params';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { getTickets } from './store/ducks/tickets';
-import { sortTicketsByPrice } from './assets/helpers/sortTickets';
+import { sortTicketsByCurrentQueryParam } from './assets/helpers/sortTickets';
+import { filterTicketsByQueryParams } from './assets/helpers/filterTickets';
 
 function App() {
   const dispatch = useDispatch();
@@ -28,39 +29,9 @@ function App() {
   }, [dispatch]);
 
   useEffect(() => {
-    let isPresentParams = false;
-    const ticketsFiltered = [...searchParams].reduce((a, param) => {
-      const key = param[0];
-      
-      const final = configFilterCheckbox.reduce((acc, {query,action}) => {
-        if (query === key) {
-          isPresentParams = true;
-          acc.push(...action(tickets));
-        }
-        return acc;
-      }, []);
-      a.push(...final);
-
-      return a;
-    }, []);
-
-    const hasSortParam = configFilterTabs.reduce((acc,{query})=>{
-      if(searchParams.has(query)){
-        acc.push(query)
-      }
-      return acc
-    },[])
-
-    if(hasSortParam.length){
-      //todo
-      console.log(sortTicketsByPrice(ticketsFiltered))
-    }
-
-    if (isPresentParams) {
-      setFilteredTickets(ticketsFiltered);
-    } else {
-      setFilteredTickets(tickets);
-    }
+    const filtered = filterTicketsByQueryParams(tickets, searchParams);
+    const sorted = sortTicketsByCurrentQueryParam(filtered, searchParams);
+    setFilteredTickets(sorted);
   }, [searchParams, tickets]);
 
   return (
