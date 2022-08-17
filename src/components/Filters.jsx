@@ -10,8 +10,8 @@ const Filters = ({ name, config }) => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const initCheckedByURL = () =>
-    config.reduce((acc, val) => {
-      const key = val.query;
+    config.reduce((acc, { query }) => {
+      const key = query;
       if (searchParams.has(key)) {
         acc.push(key);
       }

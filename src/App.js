@@ -22,7 +22,8 @@ function App() {
   const tickets = useSelector((state) => state.tickets);
   const [visibleTickets, setVisibleTickets] = useState(5);
   const [searchParams] = useSearchParams();
-  const [filteredTickets, setFilteredTickets] = useState([]);
+  const [filteredTickets, setFilteredTickets] = useState(tickets);
+  const [sortedTickets, setSortedTickets] = useState(filteredTickets);
 
   useEffect(() => {
     dispatch(getTickets());
@@ -30,9 +31,16 @@ function App() {
 
   useEffect(() => {
     const filtered = filterTicketsByQueryParams(tickets, searchParams);
-    const sorted = sortTicketsByCurrentQueryParam(filtered, searchParams);
-    setFilteredTickets(sorted);
+    setFilteredTickets(filtered);
   }, [searchParams, tickets]);
+
+  useEffect(() => {
+    const sorted = sortTicketsByCurrentQueryParam(
+      filteredTickets,
+      searchParams
+    );
+    setSortedTickets(sorted);
+  }, [searchParams, filteredTickets]);
 
   return (
     <>
@@ -49,7 +57,7 @@ function App() {
           <Col>
             <ButtonTabs config={configFilterTabs} />
             <TicketList
-              tickets={filteredTickets}
+              tickets={sortedTickets}
               visibleTickets={visibleTickets}
             />
             <ButtonMore setShowMore={setVisibleTickets} />
