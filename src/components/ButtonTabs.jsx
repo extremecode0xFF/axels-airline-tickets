@@ -1,10 +1,9 @@
 import React from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { useFormik } from 'formik';
 
 import { Button, ButtonGroup } from 'react-bootstrap';
 import { ContainerButtonTabs } from '../styled/ButtonTabs';
-
-import { useSearchParams } from 'react-router-dom';
-import { useFormik } from 'formik';
 
 const ButtonTabs = ({ config }) => {
   const [searchParams, setSearchParams] = useSearchParams();

@@ -1,10 +1,9 @@
 import React from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { useFormik } from 'formik';
 
 import { Container, Form } from 'react-bootstrap';
 import { ContainerFilters } from '../styled/Filters';
-
-import { useSearchParams } from 'react-router-dom';
-import { useFormik } from 'formik';
 
 const Filters = ({ name, config }) => {
   const [searchParams, setSearchParams] = useSearchParams();

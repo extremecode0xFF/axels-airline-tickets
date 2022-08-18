@@ -1,5 +1,7 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import { useSearchParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
 
 import {
   Filters,
@@ -10,10 +12,8 @@ import {
 } from './components';
 import { GlobalStyles } from './styled/GlobalStyles';
 
-import { configFilterCheckbox, configFilterTabs } from './configs/params';
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect, useState } from 'react';
 import { getTickets } from './store/ducks/tickets';
+import { configFilterCheckbox, configFilterTabs } from './configs/params';
 import { sortTicketsByCurrentQueryParam } from './assets/helpers/sortTickets';
 import { filterTicketsByQueryParams } from './assets/helpers/filterTickets';
 
