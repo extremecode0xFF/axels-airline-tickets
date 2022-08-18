@@ -7,8 +7,8 @@ import {
   parseToHourMinutes,
   addMinutesToDate,
   timeConvert,
-} from '../assets/helpers/parseDate';
-import { getPostfix } from '../assets/helpers/stringEdit';
+} from '../helpers/parseDate';
+import { getPostfix } from '../helpers/stringEdit';
 import airlineLogo from '../assets/images/airlines_logo.png';
 
 const Ticket = ({ price, carrier, segments }) => (

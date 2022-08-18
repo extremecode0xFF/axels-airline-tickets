@@ -14,8 +14,8 @@ import { GlobalStyles } from './styled/GlobalStyles';
 
 import { getTickets } from './store/ducks/tickets';
 import { configFilterCheckbox, configFilterTabs } from './configs/params';
-import { sortTicketsByCurrentQueryParam } from './assets/helpers/sortTickets';
-import { filterTicketsByQueryParams } from './assets/helpers/filterTickets';
+import { sortTicketsByCurrentQueryParam } from './helpers/sortTickets';
+import { filterTicketsByQueryParams } from './helpers/filterTickets';
 
 function App() {
   const dispatch = useDispatch();
