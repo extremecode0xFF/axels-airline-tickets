@@ -12,7 +12,7 @@ import {
 } from './components';
 import { GlobalStyles } from './styled/GlobalStyles';
 
-import { getTickets } from './store/ducks/tickets';
+import { getTickets } from './redux/ducks/tickets';
 import { configFilterCheckbox, configFilterTabs } from './configs/params';
 import { sortTicketsByCurrentQueryParam } from './helpers/sortTickets';
 import { filterTicketsByQueryParams } from './helpers/filterTickets';

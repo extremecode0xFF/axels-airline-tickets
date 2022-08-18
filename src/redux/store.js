@@ -1,7 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
 import createSagaMiddleware from '@redux-saga/core';
-import { watcherSaga } from './sagas/rootSaga';
+
 import reducer from './ducks/tickets';
+import { watcherSaga } from './ducks/rootSaga';
 
 const sagaMiddleware = createSagaMiddleware();
 

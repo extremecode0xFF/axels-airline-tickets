@@ -1,5 +1,6 @@
 import { all } from 'redux-saga/effects';
-import { watcherGetTickets } from './handlers/tickets';
+
+import { watcherGetTickets } from './tickets';
 
 export function* watcherSaga() {
   yield all([watcherGetTickets()]);
