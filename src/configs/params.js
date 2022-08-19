@@ -1,9 +1,5 @@
 const configFilterCheckbox = [
   {
-    title: 'Все',
-    query: 'all',
-  },
-  {
     title: 'Без пересадок',
     query: 'transfer0',
   },
