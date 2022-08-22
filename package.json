@@ -25,7 +25,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "npx mockoon-cli start --data ./src/mock/aviasales.json --daemon-off"
+    "server": "npx mockoon-cli start --data ./src/mock/aviasales.json --daemon-off",
+    "netlify": "react-scripts build && npm run server"
   },
   "eslintConfig": {
     "extends": [
