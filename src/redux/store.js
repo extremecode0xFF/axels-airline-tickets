@@ -14,4 +14,4 @@ const store = configureStore({
 
 sagaMiddleware.run(watcherSaga);
 
-export { store };
+export default store;

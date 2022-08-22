@@ -1,22 +1,25 @@
-import React from 'react';
+import React, { useMemo, memo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useFormik } from 'formik';
 
 import { Button, ButtonGroup } from 'react-bootstrap';
 import { ContainerButtonTabs } from '../styled/ButtonTabs';
 
-const ButtonTabs = ({ config }) => {
+const ButtonTabs = memo(({ config }) => {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const initTabsByURL = () =>
-    config.reduce((acc, { query }) => {
-      if (searchParams.has(query)) {
-        acc = query;
-      }
-      return acc;
-    }, '');
+  const initTabsByURL = useMemo(
+    () =>
+      config.reduce((acc, { query }) => {
+        if (searchParams.has(query)) {
+          acc = query;
+        }
+        return acc;
+      }, ''),
+    []
+  );
 
-  const formik = useFormik({ initialValues: { radio: initTabsByURL() } });
+  const formik = useFormik({ initialValues: { radio: initTabsByURL } });
 
   const handleClick = (event) => {
     const key = event.target.value;
@@ -33,7 +36,6 @@ const ButtonTabs = ({ config }) => {
 
   return (
     <ContainerButtonTabs className="mb-3">
-      {/*<pre>{JSON.stringify(formik.values, null, 2)}</pre>*/}
       <ButtonGroup className="w-100" size="dm">
         {config.map(({ title, query }, index) => (
           <Button
@@ -55,6 +57,6 @@ const ButtonTabs = ({ config }) => {
       </ButtonGroup>
     </ContainerButtonTabs>
   );
-};
+});
 
 export default ButtonTabs;
