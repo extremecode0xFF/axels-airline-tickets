@@ -16,6 +16,7 @@ const ButtonTabs = memo(({ config }) => {
         }
         return acc;
       }, ''),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     []
   );
 

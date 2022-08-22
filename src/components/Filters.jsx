@@ -18,6 +18,7 @@ const Filters = memo(({ name, config }) => {
         }
         return acc;
       }, {}),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     []
   );
 
