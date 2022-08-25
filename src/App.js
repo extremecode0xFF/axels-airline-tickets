@@ -1,7 +1,5 @@
-import { Container, Row, Col } from 'react-bootstrap';
-import { useSearchParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { useState } from 'react';
 
 import {
   Filters,
@@ -10,37 +8,14 @@ import {
   ButtonMore,
   TicketList,
 } from './components';
+import { Container, Row, Col } from 'react-bootstrap';
 import { GlobalStyles } from './styled/GlobalStyles';
 
-import { getTickets } from './redux/ducks/tickets';
 import { configFilterCheckbox, configFilterTabs } from './configs/params';
-import { sortTicketsByCurrentQueryParam } from './helpers/sortTickets';
-import { filterTicketsByQueryParams } from './helpers/filterTickets';
 
 function App() {
-  const dispatch = useDispatch();
   const tickets = useSelector((state) => state.tickets);
   const [visibleTickets, setVisibleTickets] = useState(5);
-  const [searchParams] = useSearchParams();
-  const [filteredTickets, setFilteredTickets] = useState(tickets);
-  const [sortedTickets, setSortedTickets] = useState(filteredTickets);
-
-  useEffect(() => {
-    dispatch(getTickets());
-  }, [dispatch]);
-
-  useEffect(() => {
-    const filtered = filterTicketsByQueryParams(tickets, searchParams);
-    setFilteredTickets(filtered);
-  }, [searchParams, tickets]);
-
-  useEffect(() => {
-    const sorted = sortTicketsByCurrentQueryParam(
-      filteredTickets,
-      searchParams
-    );
-    setSortedTickets(sorted);
-  }, [searchParams, filteredTickets]);
 
   return (
     <>
@@ -56,10 +31,7 @@ function App() {
           </Col>
           <Col>
             <ButtonTabs config={configFilterTabs} />
-            <TicketList
-              tickets={sortedTickets}
-              visibleTickets={visibleTickets}
-            />
+            <TicketList tickets={tickets} visibleTickets={visibleTickets} />
             <ButtonMore setShowMore={setVisibleTickets} />
           </Col>
         </Row>

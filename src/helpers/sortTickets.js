@@ -1,18 +1,8 @@
-import { getCurrentQueryParams } from './queryParams';
-
-const sortTicketsByCurrentQueryParam = (tickets, urlQueryParams) => {
+const sortTicketsByCurrentQueryParam = (tickets, urlQueryParam) => {
   if (tickets.length < 2) return tickets;
-
   const deepCloneTickets = structuredClone(tickets);
-  const currentQueryParam = getCurrentQueryParams(urlQueryParams, [
-    'cheapest',
-    'fastest',
-    'optimal',
-  ]);
 
-  if (currentQueryParam === 0) return tickets;
-
-  switch (currentQueryParam[0]) {
+  switch (urlQueryParam) {
     case 'cheapest':
       deepCloneTickets.sort(
         (ticket, nextTicket) => ticket.price - nextTicket.price
