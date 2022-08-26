@@ -1,0 +1,76 @@
+{
+  "uuid": "9d5f3bef-6843-4039-bcf8-34a494397715",
+  "lastMigration": 22,
+  "name": "Aviasales",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3001,
+  "hostname": "0.0.0.0",
+  "routes": [
+    {
+      "uuid": "3030d725-22f7-437d-8a47-a8e42b9f531d",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "tickets",
+      "responses": [
+        {
+          "uuid": "7e9e7441-ae35-4ba7-918e-3acc13390ac3",
+          "body": "{\n  \"tickets\": [\n  {{#repeat 5 50 comma=true}}\n  {\n    \"price\": {{faker 'commerce.price' 8000 20000 0}},\n    \"carrier\": \"S7\",\n    \"segments\": [\n      {{#repeat 2 comma=true}}\n      {\n        \"origin\": \"{{faker 'address.stateAbbr'}}\",\n        \"destination\": \"{{faker 'address.stateAbbr'}}\",\n        \"date\": \"{{faker 'date.soon'}}\",\n        \"stops\": [{{#repeat 0 3 comma=true}}\"{{faker 'address.stateAbbr'}}\"{{/repeat}}],\n        \"duration\": {{int 30 1440}}\n      }\n      {{/repeat}}\n    ]\n  }\n  {{/repeat}}\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ]
+}

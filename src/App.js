@@ -1,4 +1,6 @@
-import { Container, Row, Col } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
+import { useState } from 'react';
+
 import {
   Filters,
   Header,
@@ -6,16 +8,15 @@ import {
   ButtonMore,
   TicketList,
 } from './components';
+import { Container, Row, Col } from 'react-bootstrap';
 import { GlobalStyles } from './styled/GlobalStyles';
 
+import { configFilterCheckbox, configFilterTabs } from './configs/params';
+
 function App() {
-  const list = [
-    'Все',
-    'Без пересадок',
-    '1 пересадка',
-    '2 пересадки',
-    '3 пересадки',
-  ];
+  const tickets = useSelector((state) => state.tickets);
+  const [visibleTickets, setVisibleTickets] = useState(5);
+
   return (
     <>
       <GlobalStyles />
@@ -23,12 +24,15 @@ function App() {
         <Header />
         <Row className="mx-auto" as="section">
           <Col md={3}>
-            <Filters name="Количество пересадок" checkBoxList={list} />
+            <Filters
+              name="Количество пересадок"
+              config={configFilterCheckbox}
+            />
           </Col>
           <Col>
-            <ButtonTabs />
-            <TicketList />
-            <ButtonMore />
+            <ButtonTabs config={configFilterTabs} />
+            <TicketList tickets={tickets} visibleTickets={visibleTickets} />
+            <ButtonMore setShowMore={setVisibleTickets} />
           </Col>
         </Row>
       </Container>

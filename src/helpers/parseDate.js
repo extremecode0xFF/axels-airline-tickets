@@ -9,7 +9,7 @@ const parseToHourMinutes = (date) => {
 };
 
 const addMinutesToDate = (date, minutes) =>
-  new Date(date.getTime() + minutes * 60000);
+  new Date(new Date(date).getTime() + minutes * 60000);
 
 const timeConvert = (min) => {
   const num = min;
