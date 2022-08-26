@@ -57,9 +57,9 @@ const ButtonTabs = memo(({ config }) => {
             id={query}
             name="radio"
             value={query}
-            onClick={(e) => {
-              formik.handleChange(e);
-              handleClick(e);
+            onClick={(event) => {
+              formik.handleChange(event);
+              handleClick(event);
             }}
             disabled={query === formik.values.radio}
           >

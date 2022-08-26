@@ -1,14 +1,16 @@
+import { CHEAPEST, FASTEST, OPTIMAL } from '../data/constants/queries';
+
 const sortTicketsByCurrentQueryParam = (tickets, urlQueryParam) => {
   if (tickets.length < 2) return tickets;
   const deepCloneTickets = structuredClone(tickets);
 
   switch (urlQueryParam) {
-    case 'cheapest':
+    case CHEAPEST:
       deepCloneTickets.sort(
         (ticket, nextTicket) => ticket.price - nextTicket.price
       );
       break;
-    case 'fastest':
+    case FASTEST:
       deepCloneTickets.sort(
         (ticket, nextTicket) =>
           ticket.segments[0].duration +
@@ -16,7 +18,7 @@ const sortTicketsByCurrentQueryParam = (tickets, urlQueryParam) => {
           (nextTicket.segments[0].duration + nextTicket.segments[1].duration)
       );
       break;
-    case 'optimal':
+    case OPTIMAL:
       deepCloneTickets.sort(
         (ticket, nextTicket) =>
           ticket.price +

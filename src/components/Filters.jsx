@@ -78,9 +78,9 @@ const Filters = memo(({ name, config }) => {
           className="d-flex justify-content-between align-items-center mx-3 user-select-none"
           label="Все"
           id="checkAll"
-          onChange={(e) => {
-            formik.handleChange(e);
-            handleChangeAll(e);
+          onChange={(event) => {
+            formik.handleChange(event);
+            handleChangeAll(event);
           }}
           checked={formik.values.checkAll}
         />
@@ -94,9 +94,9 @@ const Filters = memo(({ name, config }) => {
               id={query}
               label={title}
               value={formik.values.checked[query]}
-              onChange={(e) => {
-                formik.handleChange(e);
-                handleChange(e);
+              onChange={(event) => {
+                formik.handleChange(event);
+                handleChange(event);
               }}
               checked={formik.values.checked[query]}
             />

@@ -1,34 +1,44 @@
+import {
+  TRANSFER_0,
+  TRANSFER_1,
+  TRANSFER_2,
+  TRANSFER_3,
+  CHEAPEST,
+  FASTEST,
+  OPTIMAL,
+} from '../data/constants/queries';
+
 const configFilterCheckbox = [
   {
     title: 'Без пересадок',
-    query: 'transfer0',
+    query: TRANSFER_0,
   },
   {
     title: '1 пересадка',
-    query: 'transfer1',
+    query: TRANSFER_1,
   },
   {
     title: '2 пересадки',
-    query: 'transfer2',
+    query: TRANSFER_2,
   },
   {
     title: '3 пересадки',
-    query: 'transfer3',
+    query: TRANSFER_3,
   },
 ];
 
 const configFilterTabs = [
   {
     title: 'Самый дешевый',
-    query: 'cheapest',
+    query: CHEAPEST,
   },
   {
     title: 'Самый быстрый',
-    query: 'fastest',
+    query: FASTEST,
   },
   {
     title: 'Оптимальный',
-    query: 'optimal',
+    query: OPTIMAL,
   },
 ];
 
