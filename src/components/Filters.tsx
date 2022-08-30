@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, memo } from 'react';
+import React, { useEffect, useMemo, memo, ChangeEvent } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
@@ -7,14 +7,20 @@ import { Container, Form } from 'react-bootstrap';
 import { ContainerFilters } from '../styled/Filters';
 
 import { setFilteredTickets } from '../redux/ducks/tickets';
+import { ConfigParams } from '../types/config';
 
-const Filters = memo(({ name, config }) => {
+interface PropTypes {
+  name: string;
+  config: ConfigParams[];
+}
+
+const Filters = memo<PropTypes>(({ name, config }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const dispatch = useDispatch();
 
   const initParams = useMemo(
     () =>
-      config.reduce((acc, { query }) => {
+      config.reduce<Record<string, boolean>>((acc, { query }) => {
         if (searchParams.has(query)) {
           acc[query] = true;
         } else {
@@ -31,21 +37,25 @@ const Filters = memo(({ name, config }) => {
       checkAll: false,
       checked: initParams,
     },
+    onSubmit() {},
   });
 
   useEffect(() => {
-    const params = Object.keys(formik.values.checked).reduce((acc, param) => {
-      let isChecked = formik.values.checked[param];
-      if (isChecked) {
-        acc.push(param);
-      }
-      return acc;
-    }, []);
+    const params = Object.keys(formik.values.checked).reduce<string[]>(
+      (acc, param) => {
+        let isChecked = formik.values.checked[param];
+        if (isChecked) {
+          acc.push(param);
+        }
+        return acc;
+      },
+      []
+    );
     dispatch(setFilteredTickets(params));
   }, [dispatch, formik.values.checked]);
 
-  const handleChange = (event) => {
-    const { id, checked } = event.target;
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const { id, checked } = event.currentTarget;
     if (checked) {
       searchParams.set(id, '');
     } else {
@@ -54,15 +64,15 @@ const Filters = memo(({ name, config }) => {
     setSearchParams(searchParams);
   };
 
-  const handleChangeAll = (event) => {
-    const { checked } = event.target;
-    const newCheckedField = {};
+  const handleChangeAll = (event: ChangeEvent<HTMLInputElement>) => {
+    const { checked } = event.currentTarget;
+    const newCheckedField: Record<string, boolean> = {};
     for (const param in formik.values.checked) {
       if (checked) {
         searchParams.set(param, '');
         newCheckedField[param] = true;
       } else {
-        searchParams.delete(param, '');
+        searchParams.delete(param);
         newCheckedField[param] = false;
       }
     }
@@ -93,7 +103,6 @@ const Filters = memo(({ name, config }) => {
               name={`checked[${query}]`}
               id={query}
               label={title}
-              value={formik.values.checked[query]}
               onChange={(event) => {
                 formik.handleChange(event);
                 handleChange(event);

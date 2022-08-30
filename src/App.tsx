@@ -1,5 +1,4 @@
-import { useSelector } from 'react-redux';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import {
   Filters,
@@ -12,9 +11,10 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { GlobalStyles } from './styled/GlobalStyles';
 
 import { configFilterCheckbox, configFilterTabs } from './configs/params';
+import { useTypedSelector } from './hooks/useTypedSelector';
 
 function App() {
-  const tickets = useSelector((state) => state.tickets);
+  const tickets = useTypedSelector((state) => state.tickets);
   const [visibleTickets, setVisibleTickets] = useState(5);
 
   return (

@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import { Button } from 'react-bootstrap';
 import { ContainerButtonMore } from '../styled/ButtonMore';
 
-const ButtonMore = ({ setShowMore }) => (
+type PropTypes = {
+  setShowMore: React.Dispatch<React.SetStateAction<number>>;
+};
+
+const ButtonMore: FC<PropTypes> = ({ setShowMore }) => (
   <ContainerButtonMore>
     <Button
       className="w-100 mb-3"

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import { Image, Container } from 'react-bootstrap';
 import { ContainerTicket } from '../styled/Ticket';
@@ -10,8 +10,11 @@ import {
 } from '../helpers/parseDate';
 import { getPostfix } from '../helpers/stringEdit';
 import airlineLogo from '../assets/images/airlines_logo.png';
+import { Ticket as TypeTicket } from '../types/api';
 
-const Ticket = ({ price, segments }) => (
+type PropTypes = TypeTicket;
+
+const Ticket: FC<PropTypes> = ({ price, segments }) => (
   <ContainerTicket gap={3} className="mb-3 p-4 bg-white rounded">
     <Container className="d-flex justify-content-between align-items-center">
       <span className="price">{`${price.toLocaleString()} P`}</span>

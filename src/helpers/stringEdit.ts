@@ -1,9 +1,9 @@
-const getPostfix = (n) => {
+const getPostfix = (transfers: number) => {
   const base = 'пересад';
   switch (true) {
-    case n >= 5 || n === 0:
+    case transfers >= 5 || transfers === 0:
       return base + 'ок';
-    case n >= 2:
+    case transfers >= 2:
       return base + 'ки';
     default:
       return base + 'ка';
