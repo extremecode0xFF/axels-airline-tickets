@@ -1,12 +1,13 @@
 import { CHEAPEST, FASTEST, OPTIMAL } from '../data/constants/queries';
 import { Ticket } from '../types/api';
+import { QuerySort } from '../types/queries';
 
 const sortTicketsByCurrentQueryParam = (
   tickets: Ticket[],
-  urlQueryParam: string
+  urlQueryParam: QuerySort
 ) => {
   if (tickets.length < 2) return tickets;
-  const deepCloneTickets = structuredClone(tickets);
+  const deepCloneTickets: Ticket[] = JSON.parse(JSON.stringify(tickets));
 
   switch (urlQueryParam) {
     case CHEAPEST:

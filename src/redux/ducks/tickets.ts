@@ -5,6 +5,7 @@ import { requestGetTickets } from '../../api/requests/tickets';
 import { filterTicketsByQueryParams } from '../../helpers/filterTickets';
 import { sortTicketsByCurrentQueryParam } from '../../helpers/sortTickets';
 import { Ticket } from '../../types/api';
+import { QueriesFilter, QuerySort } from '../../types/queries';
 
 const ticketsSlice = createSlice({
   name: 'tickets',
@@ -32,7 +33,7 @@ export function* handleGetTickets() {
 
 export function* handleFilterTickets(action: {
   type: string;
-  payload: string[];
+  payload: QueriesFilter[];
 }) {
   try {
     const { tickets } = yield call(requestGetTickets);
@@ -48,7 +49,7 @@ export function* handleFilterTickets(action: {
 
 export function* handleSortTickets(action: {
   type: string;
-  payload: string;
+  payload: QuerySort;
 }): Generator<StrictEffect, void, Ticket[]> {
   const tickets = yield select((state) => state.tickets);
   const sorted = sortTicketsByCurrentQueryParam(tickets, action.payload);

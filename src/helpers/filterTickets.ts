@@ -1,4 +1,5 @@
 import { Ticket } from '../types/api';
+import { QueriesFilter } from '../types/queries';
 
 const filterTicketsByStops = (stopsCount: number) => (tickets: Ticket[]) =>
   tickets.filter((ticket) => {
@@ -13,7 +14,7 @@ const filterTicketsByStops = (stopsCount: number) => (tickets: Ticket[]) =>
 
 const filterTicketsByQueryParams = (
   tickets: Ticket[],
-  urlQueryParams: string[]
+  urlQueryParams: QueriesFilter[]
 ) => {
   if (tickets.length < 2) return tickets;
 
