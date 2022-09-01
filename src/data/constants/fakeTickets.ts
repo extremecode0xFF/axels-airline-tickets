@@ -2,7 +2,7 @@ import { Ticket } from "../../types/api";
 
 const FAKE_TICKETS: Ticket[] = [
   {
-    price: 22000,
+    price: 20210,
     carrier: 'S7',
     segments: [
       {
@@ -10,14 +10,14 @@ const FAKE_TICKETS: Ticket[] = [
         destination: 'BB',
         date: Date.now().toString(),
         stops: [],
-        duration: 125,
+        duration: 100,
       },
       {
         origin: 'AA',
         destination: 'BB',
         date: Date.now().toString(),
         stops: [],
-        duration: 170,
+        duration: 50,
       },
     ],
   },
@@ -42,7 +42,7 @@ const FAKE_TICKETS: Ticket[] = [
     ],
   },
   {
-    price: 22000,
+    price: 19000,
     carrier: 'S7',
     segments: [
       {
@@ -50,19 +50,19 @@ const FAKE_TICKETS: Ticket[] = [
         destination: 'BB',
         date: Date.now().toString(),
         stops: ['AB', 'BC'],
-        duration: 125,
+        duration: 20,
       },
       {
         origin: 'CV',
         destination: 'VC',
         date: Date.now().toString(),
         stops: ['GB', 'BG'],
-        duration: 170,
+        duration: 10,
       },
     ],
   },
   {
-    price: 22000,
+    price: 23400,
     carrier: 'S7',
     segments: [
       {
@@ -70,14 +70,14 @@ const FAKE_TICKETS: Ticket[] = [
         destination: 'VC',
         date: Date.now().toString(),
         stops: ['AB', 'BC', 'CC'],
-        duration: 125,
+        duration: 10,
       },
       {
         origin: 'CV',
         destination: 'VC',
         date: Date.now().toString(),
         stops: ['GB', 'BG', 'CC'],
-        duration: 170,
+        duration: 10,
       },
     ],
   },

@@ -1,21 +1,22 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import store from '../../redux/store';
+import renderer from 'react-test-renderer';
 
 import App from '../../App';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
+import store from '../../redux/store';
+
 describe('App', () => {
-  test('App make snapshot', () => {
-    const app = (
+  test('match snapshot', () => {
+    const component = renderer.create(
       <Provider store={store}>
         <BrowserRouter>
           <App />
         </BrowserRouter>
       </Provider>
     );
-    render(app);
-    expect(app).toMatchSnapshot();
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });
