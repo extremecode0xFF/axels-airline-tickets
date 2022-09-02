@@ -1,4 +1,4 @@
-import { Ticket } from "../../types/api";
+import { Ticket } from '../../types/api';
 
 const FAKE_TICKETS: Ticket[] = [
   {

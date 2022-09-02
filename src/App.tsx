@@ -32,7 +32,7 @@ function App() {
           <Col>
             <ButtonTabs config={configFilterTabs} />
             <TicketList tickets={tickets} visibleTickets={visibleTickets} />
-            <ButtonMore setShowMore={setVisibleTickets} />
+            <ButtonMore onClick={() => setVisibleTickets((prev) => prev + 5)} />
           </Col>
         </Row>
       </Container>

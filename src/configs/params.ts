@@ -1,3 +1,4 @@
+import { QuerySort } from './../types/queries';
 import {
   TRANSFER_0,
   TRANSFER_1,
@@ -7,8 +8,10 @@ import {
   FASTEST,
   OPTIMAL,
 } from '../data/constants/queries';
+import { ConfigParams } from '../types/config';
+import { QueriesFilter } from '../types/queries';
 
-const configFilterCheckbox = [
+const configFilterCheckbox: ConfigParams<QueriesFilter>[] = [
   {
     title: 'Без пересадок',
     query: TRANSFER_0,
@@ -27,7 +30,7 @@ const configFilterCheckbox = [
   },
 ];
 
-const configFilterTabs = [
+const configFilterTabs: ConfigParams<QuerySort>[] = [
   {
     title: 'Самый дешевый',
     query: CHEAPEST,

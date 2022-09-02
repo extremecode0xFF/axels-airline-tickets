@@ -1,4 +1,4 @@
-export type ConfigParams = {
+export type ConfigParams<T = string> = {
   title: string;
-  query: string;
+  query: T;
 };

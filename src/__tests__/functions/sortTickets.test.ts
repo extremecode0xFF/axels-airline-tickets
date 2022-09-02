@@ -3,28 +3,28 @@ import { CHEAPEST, FASTEST, OPTIMAL } from '../../data/constants/queries';
 import { sortTicketsByCurrentQueryParam } from '../../helpers/sortTickets';
 
 describe('helper/filterTicketsByQueryParams', () => {
-  const [t0, t1, t2, t3] = FAKE_TICKETS;
+  const [ticket0, ticket1, ticket2, ticket3] = FAKE_TICKETS;
   test('sort order: price ascending', () =>
     expect(sortTicketsByCurrentQueryParam(FAKE_TICKETS, CHEAPEST)).toEqual([
-      t2,
-      t0,
-      t1,
-      t3,
+      ticket2,
+      ticket0,
+      ticket1,
+      ticket3,
     ]));
 
   test('sort order: fastest', () =>
     expect(sortTicketsByCurrentQueryParam(FAKE_TICKETS, FASTEST)).toEqual([
-      t3,
-      t2,
-      t0,
-      t1,
+      ticket3,
+      ticket2,
+      ticket0,
+      ticket1,
     ]));
 
   test('sort order: optimal', () =>
     expect(sortTicketsByCurrentQueryParam(FAKE_TICKETS, OPTIMAL)).toEqual([
-      t2,
-      t0,
-      t1,
-      t3,
+      ticket2,
+      ticket0,
+      ticket1,
+      ticket3,
     ]));
 });

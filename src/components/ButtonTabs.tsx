@@ -9,9 +9,10 @@ import { ContainerButtonTabs } from '../styled/ButtonTabs';
 import { setSortTickets } from '../redux/ducks/tickets';
 import { ConfigParams } from '../types/config';
 import { useTypedSelector } from '../hooks/useTypedSelector';
+import { QuerySort } from '../types/queries';
 
 interface PropTypes {
-  config: ConfigParams[];
+  config: ConfigParams<QuerySort>[];
 }
 
 const ButtonTabs = memo<PropTypes>(({ config }) => {

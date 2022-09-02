@@ -8,10 +8,11 @@ import { ContainerFilters } from '../styled/Filters';
 
 import { setFilteredTickets } from '../redux/ducks/tickets';
 import { ConfigParams } from '../types/config';
+import { QueriesFilter } from '../types/queries';
 
 interface PropTypes {
   name: string;
-  config: ConfigParams[];
+  config: ConfigParams<QueriesFilter>[];
 }
 
 const Filters = memo<PropTypes>(({ name, config }) => {
