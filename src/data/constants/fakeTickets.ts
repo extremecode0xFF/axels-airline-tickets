@@ -1,5 +1,7 @@
 import { Ticket } from '../../types/api';
 
+const FAKE_DATE = new Date('Thu Sep 01 2022 16:57:54').toString();
+
 const FAKE_TICKETS: Ticket[] = [
   {
     price: 20210,
@@ -8,14 +10,14 @@ const FAKE_TICKETS: Ticket[] = [
       {
         origin: 'AA',
         destination: 'BB',
-        date: Date.now().toString(),
+        date: FAKE_DATE,
         stops: [],
         duration: 100,
       },
       {
         origin: 'AA',
         destination: 'BB',
-        date: Date.now().toString(),
+        date: FAKE_DATE,
         stops: [],
         duration: 50,
       },
@@ -28,14 +30,14 @@ const FAKE_TICKETS: Ticket[] = [
       {
         origin: 'AA',
         destination: 'BB',
-        date: Date.now().toString(),
+        date: FAKE_DATE,
         stops: ['CC'],
         duration: 125,
       },
       {
         origin: 'AA',
         destination: 'BB',
-        date: Date.now().toString(),
+        date: FAKE_DATE,
         stops: ['CC'],
         duration: 170,
       },
@@ -48,14 +50,14 @@ const FAKE_TICKETS: Ticket[] = [
       {
         origin: 'AA',
         destination: 'BB',
-        date: Date.now().toString(),
+        date: FAKE_DATE,
         stops: ['AB', 'BC'],
         duration: 20,
       },
       {
         origin: 'CV',
         destination: 'VC',
-        date: Date.now().toString(),
+        date: FAKE_DATE,
         stops: ['GB', 'BG'],
         duration: 10,
       },
@@ -68,14 +70,14 @@ const FAKE_TICKETS: Ticket[] = [
       {
         origin: 'MS',
         destination: 'VC',
-        date: Date.now().toString(),
+        date: FAKE_DATE,
         stops: ['AB', 'BC', 'CC'],
         duration: 10,
       },
       {
         origin: 'CV',
         destination: 'VC',
-        date: Date.now().toString(),
+        date: FAKE_DATE,
         stops: ['GB', 'BG', 'CC'],
         duration: 10,
       },

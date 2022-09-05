@@ -8,9 +8,7 @@ import FAKE_TICKETS from '../../data/constants/fakeTickets';
 describe('Ticket', () => {
   const tickets = FAKE_TICKETS;
   test('match snapshot', () => {
-    const tree = renderer
-      .create(<Ticket {...tickets[0]} />)
-      .toJSON();
+    const tree = renderer.create(<Ticket {...tickets[0]} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
