@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonTabs match snapshot 1`] = `
+<div
+  className="sc-gsnTZi iPbkSZ mb-3 container"
+>
+  <div
+    className="w-100 btn-group btn-group-lg"
+    role="group"
+  >
+    <button
+      className="text-uppercase btn btn-light"
+      disabled={false}
+      id="cheapest"
+      name="radio"
+      onClick={[Function]}
+      type="button"
+      value="cheapest"
+    >
+      Самый дешевый
+    </button>
+    <button
+      className="text-uppercase btn btn-light"
+      disabled={false}
+      id="fastest"
+      name="radio"
+      onClick={[Function]}
+      type="button"
+      value="fastest"
+    >
+      Самый быстрый
+    </button>
+    <button
+      className="text-uppercase btn btn-light"
+      disabled={false}
+      id="optimal"
+      name="radio"
+      onClick={[Function]}
+      type="button"
+      value="optimal"
+    >
+      Оптимальный
+    </button>
+  </div>
+</div>
+`;
