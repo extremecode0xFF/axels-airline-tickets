@@ -7,7 +7,7 @@ import FAKE_TICKETS from '../../data/constants/fakeTickets';
 
 describe('TicketList', () => {
   const tickets = FAKE_TICKETS;
-  test('match snapshot', () => {
+  test('it should match a snapshot', () => {
     const tree = renderer
       .create(<TicketList tickets={tickets} visibleTickets={5} />)
       .toJSON();

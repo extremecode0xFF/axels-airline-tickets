@@ -8,7 +8,7 @@ import { BrowserRouter } from 'react-router-dom';
 import store from '../../redux/store';
 
 describe('App', () => {
-  test('match snapshot', () => {
+  test('it should match a snapshot', () => {
     const component = renderer.create(
       <Provider store={store}>
         <BrowserRouter>

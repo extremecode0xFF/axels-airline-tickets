@@ -10,7 +10,7 @@ import {
 import { Container, Row, Col } from 'react-bootstrap';
 import { GlobalStyles } from './styled/GlobalStyles';
 
-import { configFilterCheckbox, configFilterTabs } from './configs/params';
+import { configFilterCheckbox, configFilterTabs } from './data/configs/params';
 import { useTypedSelector } from './hooks/useTypedSelector';
 
 function App() {

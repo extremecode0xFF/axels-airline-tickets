@@ -1,5 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Header it should match a snapshot 1`] = `
+<div
+  className="d-flex justify-content-center py-5 container"
+>
+  <img
+    alt="logo"
+    className=""
+    src="images/header_logo.svg"
+  />
+</div>
+`;
+
 exports[`Header match snapshot 1`] = `
 <div
   className="d-flex justify-content-center py-5 container"
@@ -7,7 +19,7 @@ exports[`Header match snapshot 1`] = `
   <img
     alt="logo"
     className=""
-    src="header_logo.svg"
+    src="images/header_logo.svg"
   />
 </div>
 `;

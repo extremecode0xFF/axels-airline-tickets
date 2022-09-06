@@ -1,4 +1,4 @@
-import { QuerySort } from './../types/queries';
+import { QuerySort } from '../../types/queries';
 import {
   TRANSFER_0,
   TRANSFER_1,
@@ -7,9 +7,9 @@ import {
   CHEAPEST,
   FASTEST,
   OPTIMAL,
-} from '../data/constants/queries';
-import { ConfigParams } from '../types/config';
-import { QueriesFilter } from '../types/queries';
+} from '../constants/queries';
+import { ConfigParams } from '../../types/config';
+import { QueriesFilter } from '../../types/queries';
 
 const configFilterCheckbox: ConfigParams<QueriesFilter>[] = [
   {

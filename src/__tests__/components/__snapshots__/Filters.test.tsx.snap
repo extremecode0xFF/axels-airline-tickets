@@ -1,5 +1,136 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Filters it should match a snapshot 1`] = `
+<div
+  className="sc-dkzDqf befHRo mb-3 shadow-sm"
+>
+  <p
+    className="text-uppercase mx-3 my-0 pt-4 pb-2"
+  >
+    Количество пересадок
+  </p>
+  <div
+    className="content p-0 py-2 container"
+  >
+    <div
+      className="d-flex justify-content-between align-items-center mx-3 user-select-none form-check"
+    >
+      <input
+        checked={false}
+        className="form-check-input"
+        disabled={false}
+        id="checkAll"
+        onChange={[Function]}
+        type="checkbox"
+      />
+      <label
+        className="form-check-label"
+        htmlFor="checkAll"
+        title=""
+      >
+        Все
+      </label>
+    </div>
+  </div>
+  <div
+    className="content p-0 py-2 container"
+  >
+    <div
+      className="d-flex justify-content-between align-items-center mx-3 user-select-none form-check"
+    >
+      <input
+        checked={false}
+        className="form-check-input"
+        disabled={false}
+        id="transfer0"
+        name="checked[transfer0]"
+        onChange={[Function]}
+        type="checkbox"
+      />
+      <label
+        className="form-check-label"
+        htmlFor="transfer0"
+        title=""
+      >
+        Без пересадок
+      </label>
+    </div>
+  </div>
+  <div
+    className="content p-0 py-2 container"
+  >
+    <div
+      className="d-flex justify-content-between align-items-center mx-3 user-select-none form-check"
+    >
+      <input
+        checked={false}
+        className="form-check-input"
+        disabled={false}
+        id="transfer1"
+        name="checked[transfer1]"
+        onChange={[Function]}
+        type="checkbox"
+      />
+      <label
+        className="form-check-label"
+        htmlFor="transfer1"
+        title=""
+      >
+        1 пересадка
+      </label>
+    </div>
+  </div>
+  <div
+    className="content p-0 py-2 container"
+  >
+    <div
+      className="d-flex justify-content-between align-items-center mx-3 user-select-none form-check"
+    >
+      <input
+        checked={false}
+        className="form-check-input"
+        disabled={false}
+        id="transfer2"
+        name="checked[transfer2]"
+        onChange={[Function]}
+        type="checkbox"
+      />
+      <label
+        className="form-check-label"
+        htmlFor="transfer2"
+        title=""
+      >
+        2 пересадки
+      </label>
+    </div>
+  </div>
+  <div
+    className="content p-0 py-2 container"
+  >
+    <div
+      className="d-flex justify-content-between align-items-center mx-3 user-select-none form-check"
+    >
+      <input
+        checked={false}
+        className="form-check-input"
+        disabled={false}
+        id="transfer3"
+        name="checked[transfer3]"
+        onChange={[Function]}
+        type="checkbox"
+      />
+      <label
+        className="form-check-label"
+        htmlFor="transfer3"
+        title=""
+      >
+        3 пересадки
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Filters match snapshot 1`] = `
 <div
   className="sc-dkzDqf befHRo mb-3 shadow-sm"

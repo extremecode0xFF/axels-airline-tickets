@@ -4,7 +4,7 @@ import { sortTicketsByCurrentQueryParam } from '../../helpers/sortTickets';
 
 describe('helper/filterTicketsByQueryParams', () => {
   const [ticket0, ticket1, ticket2, ticket3] = FAKE_TICKETS;
-  test('sort order: price ascending', () =>
+  test('sort order must be price ascending', () =>
     expect(sortTicketsByCurrentQueryParam(FAKE_TICKETS, CHEAPEST)).toEqual([
       ticket2,
       ticket0,
@@ -12,7 +12,7 @@ describe('helper/filterTicketsByQueryParams', () => {
       ticket3,
     ]));
 
-  test('sort order: fastest', () =>
+  test('sort order must be fastest', () =>
     expect(sortTicketsByCurrentQueryParam(FAKE_TICKETS, FASTEST)).toEqual([
       ticket3,
       ticket2,
@@ -20,7 +20,7 @@ describe('helper/filterTicketsByQueryParams', () => {
       ticket1,
     ]));
 
-  test('sort order: optimal', () =>
+  test('sort order must be optimal', () =>
     expect(sortTicketsByCurrentQueryParam(FAKE_TICKETS, OPTIMAL)).toEqual([
       ticket2,
       ticket0,

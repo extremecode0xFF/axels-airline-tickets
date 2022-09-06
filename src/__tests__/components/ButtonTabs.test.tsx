@@ -5,11 +5,11 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { ButtonTabs } from '../../components';
 
-import { configFilterTabs } from '../../configs/params';
+import { configFilterTabs } from '../../data/configs/params';
 import store from '../../redux/store';
 
 describe('ButtonTabs', () => {
-  test('match snapshot', () => {
+  test('it should match a snapshot', () => {
     const tree = renderer
       .create(
         <BrowserRouter>
