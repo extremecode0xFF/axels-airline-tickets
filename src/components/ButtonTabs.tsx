@@ -1,16 +1,23 @@
-import React, { useMemo, memo, useEffect } from 'react';
+import React, { useMemo, memo, useEffect, MouseEvent } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useFormik } from 'formik';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { Button, ButtonGroup } from 'react-bootstrap';
 import { ContainerButtonTabs } from '../styled/ButtonTabs';
 
 import { setSortTickets } from '../redux/ducks/tickets';
+import { ConfigParams } from '../types/config';
+import { useTypedSelector } from '../hooks/useTypedSelector';
+import { QuerySort } from '../types/queries';
 
-const ButtonTabs = memo(({ config }) => {
+interface PropTypes {
+  config: ConfigParams<QuerySort>[];
+}
+
+const ButtonTabs = memo<PropTypes>(({ config }) => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const tickets = useSelector((state) => state.tickets);
+  const tickets = useTypedSelector((state) => state.tickets);
   const dispatch = useDispatch();
 
   const initTabsByURL = useMemo(
@@ -25,10 +32,13 @@ const ButtonTabs = memo(({ config }) => {
     []
   );
 
-  const formik = useFormik({ initialValues: { radio: initTabsByURL } });
+  const formik = useFormik({
+    initialValues: { radio: initTabsByURL },
+    onSubmit() {},
+  });
 
-  const handleClick = (event) => {
-    const key = event.target.value;
+  const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
+    const key = event.currentTarget.value;
     if (searchParams.has(key)) return;
     config.forEach((val) => {
       const param = val.query;
@@ -48,7 +58,7 @@ const ButtonTabs = memo(({ config }) => {
 
   return (
     <ContainerButtonTabs className="mb-3">
-      <ButtonGroup className="w-100" size="dm">
+      <ButtonGroup className="w-100" size="lg">
         {config.map(({ title, query }, index) => (
           <Button
             className="text-uppercase"

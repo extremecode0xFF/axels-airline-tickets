@@ -1,4 +1,4 @@
-const parseToHourMinutes = (date) => {
+const parseToHourMinutes = (date: string) => {
   const getDate = new Date(date);
   const hours = getDate.getHours();
   const minutes = getDate.getMinutes();
@@ -8,10 +8,10 @@ const parseToHourMinutes = (date) => {
   }`;
 };
 
-const addMinutesToDate = (date, minutes) =>
-  new Date(new Date(date).getTime() + minutes * 60000);
+const addMinutesToDate = (date: string, minutes: number) =>
+  new Date(new Date(date).getTime() + minutes * 60000).toString();
 
-const timeConvert = (min) => {
+const timeConvert = (min: number) => {
   const num = min;
   const hours = num / 60;
   const rhours = Math.floor(hours);

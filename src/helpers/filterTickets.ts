@@ -1,4 +1,7 @@
-const filterTicketsByStops = (stopsCount) => (tickets) =>
+import { Ticket } from '../types/api';
+import { QueriesFilter } from '../types/queries';
+
+const filterTicketsByStops = (stopsCount: number) => (tickets: Ticket[]) =>
   tickets.filter((ticket) => {
     let result = true;
     ticket.segments.forEach(({ stops }) => {
@@ -9,12 +12,15 @@ const filterTicketsByStops = (stopsCount) => (tickets) =>
     return result;
   });
 
-const filterTicketsByQueryParams = (tickets, urlQueryParams) => {
+const filterTicketsByQueryParams = (
+  tickets: Ticket[],
+  urlQueryParams: QueriesFilter[]
+) => {
   if (tickets.length < 2) return tickets;
 
   return urlQueryParams.length === 0
     ? tickets
-    : urlQueryParams.reduce((acc, param) => {
+    : urlQueryParams.reduce<Ticket[]>((acc, param) => {
         if (param.startsWith('transfer')) {
           const transfers = Number(param.slice('transfer'.length));
           acc.push(...filterTicketsByStops(transfers)(tickets));

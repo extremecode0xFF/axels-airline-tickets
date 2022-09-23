@@ -1,0 +1,219 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Ticket it should match a snapshot 1`] = `
+<div
+  className="sc-hKMtZM dtidkA mb-3 p-4 bg-white rounded vstack gap-3"
+>
+  <div
+    className="d-flex justify-content-between align-items-center container"
+  >
+    <span
+      className="price"
+    >
+      20 210 P
+    </span>
+    <img
+      alt="airline_log"
+      className=""
+      src="images/airlines_logo.png"
+    />
+  </div>
+  <div
+    className="d-flex justify-content-between container"
+  >
+    <div
+      className="d-flex flex-column p-0 container"
+    >
+      <span
+        className="title"
+      >
+        AA-BB
+      </span>
+      <span
+        className="info"
+      >
+        16:57 - 18:37
+      </span>
+    </div>
+    <div
+      className="d-flex flex-column p-0 container"
+    >
+      <span
+        className="title text-uppercase"
+      >
+        В пути
+      </span>
+      <span
+        className="info"
+      >
+        1ч 40м
+      </span>
+    </div>
+    <div
+      className="d-flex flex-column p-0 container"
+    >
+      <span
+        className="title text-uppercase"
+      >
+        0 пересадок
+      </span>
+      <span
+        className="info"
+      />
+    </div>
+  </div>
+  <div
+    className="d-flex justify-content-between container"
+  >
+    <div
+      className="d-flex flex-column p-0 container"
+    >
+      <span
+        className="title"
+      >
+        AA-BB
+      </span>
+      <span
+        className="info"
+      >
+        16:57 - 17:47
+      </span>
+    </div>
+    <div
+      className="d-flex flex-column p-0 container"
+    >
+      <span
+        className="title text-uppercase"
+      >
+        В пути
+      </span>
+      <span
+        className="info"
+      >
+        0ч 50м
+      </span>
+    </div>
+    <div
+      className="d-flex flex-column p-0 container"
+    >
+      <span
+        className="title text-uppercase"
+      >
+        0 пересадок
+      </span>
+      <span
+        className="info"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Ticket match snapshot 1`] = `
+<div
+  className="sc-hKMtZM dtidkA mb-3 p-4 bg-white rounded vstack gap-3"
+>
+  <div
+    className="d-flex justify-content-between align-items-center container"
+  >
+    <span
+      className="price"
+    >
+      20 210 P
+    </span>
+    <img
+      alt="airline_log"
+      className=""
+      src="images/airlines_logo.png"
+    />
+  </div>
+  <div
+    className="d-flex justify-content-between container"
+  >
+    <div
+      className="d-flex flex-column p-0 container"
+    >
+      <span
+        className="title"
+      >
+        AA-BB
+      </span>
+      <span
+        className="info"
+      >
+        16:57 - 18:37
+      </span>
+    </div>
+    <div
+      className="d-flex flex-column p-0 container"
+    >
+      <span
+        className="title text-uppercase"
+      >
+        В пути
+      </span>
+      <span
+        className="info"
+      >
+        1ч 40м
+      </span>
+    </div>
+    <div
+      className="d-flex flex-column p-0 container"
+    >
+      <span
+        className="title text-uppercase"
+      >
+        0 пересадок
+      </span>
+      <span
+        className="info"
+      />
+    </div>
+  </div>
+  <div
+    className="d-flex justify-content-between container"
+  >
+    <div
+      className="d-flex flex-column p-0 container"
+    >
+      <span
+        className="title"
+      >
+        AA-BB
+      </span>
+      <span
+        className="info"
+      >
+        16:57 - 17:47
+      </span>
+    </div>
+    <div
+      className="d-flex flex-column p-0 container"
+    >
+      <span
+        className="title text-uppercase"
+      >
+        В пути
+      </span>
+      <span
+        className="info"
+      >
+        0ч 50м
+      </span>
+    </div>
+    <div
+      className="d-flex flex-column p-0 container"
+    >
+      <span
+        className="title text-uppercase"
+      >
+        0 пересадок
+      </span>
+      <span
+        className="info"
+      />
+    </div>
+  </div>
+</div>
+`;
